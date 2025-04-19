@@ -2,126 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tabahi Beats</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #000000, #1a1a1a);
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #ff4d4d;
+      text-shadow: 0 0 10px #ff4d4d;
+      margin-bottom: 20px;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filters button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #262626;
+      border: 2px solid #ff4d4d;
+      color: #ff4d4d;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filters button:hover {
+      background-color: #ff4d4d;
       color: #fff;
     }
-
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      letter-spacing: 2px;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .beat-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      padding: 40px;
     }
-
     .beat-card {
-      background: #1e1e2f;
-      border-radius: 10px;
+      background: #1f1f1f;
+      border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      width: 300px;
+      box-shadow: 0 0 10px #ff4d4d33;
       transition: transform 0.3s;
     }
-
     .beat-card:hover {
-      transform: translateY(-5px);
+      transform: scale(1.05);
     }
-
-    h2 {
-      margin-top: 0;
-      font-size: 1.5em;
+    .genre {
+      background: #ff4d4d;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75em;
+      margin-bottom: 10px;
+      display: inline-block;
     }
-
     audio {
       width: 100%;
       margin-top: 10px;
     }
-
     .buy-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #ff5252;
+      background: #ff4d4d;
       color: #fff;
+      padding: 10px;
+      margin-top: 10px;
       border: none;
-      border-radius: 5px;
-      font-weight: bold;
+      width: 100%;
+      border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
     }
-
+    .buy-btn:hover {
+      background: #e60000;
+    }
     footer {
+      margin-top: 50px;
       text-align: center;
-      padding: 30px;
-      background: #111;
-      margin-top: 40px;
+      font-size: 0.9em;
     }
-
-    .social a {
-      color: #ff5252;
+    .about {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .social-links a {
+      color: #ff4d4d;
       margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
-    }
-
-    .social a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    Tabahi Beats
-  </header>
-
-  <div class="container">
-    <div class="beat-card">
-      <h2>Romantic Beat - ₹149</h2>
+  <h1>Tabahi Beats</h1>
+  <div class="filters">
+    <button onclick="filterBeats('all')">All</button>
+    <button onclick="filterBeats('trap')">Trap</button>
+    <button onclick="filterBeats('romantic')">Romantic</button>
+    <button onclick="filterBeats('drill')">Drill</button>
+  </div>
+  <div class="beat-container" id="beatContainer">
+    <div class="beat-card" data-type="trap">
+      <span class="genre">Trap</span>
+      <p>Trap Beat - Rs.149</p>
       <audio controls>
-        <source src="https://docs.google.com/uc?export=download&id=1ph6ZSALhnryd6OfOwJpw0ANOM3w1FoiV" type="audio/mp3">
+        <source src="beats/trap.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      <a class="buy-btn" href="https://wa.me/917874705170?text=Hi!%20I%20want%20to%20buy%20the%20Romantic%20Beat" target="_blank">Buy Now</a>
+      <button class="buy-btn" onclick="buyNow('Trap Beat')">Buy Now</button>
     </div>
-
-    <div class="beat-card">
-      <h2>Trap Beat - ₹149</h2>
+    <div class="beat-card" data-type="romantic">
+      <span class="genre">Romantic</span>
+      <p>Romantic Beat - Rs.149</p>
       <audio controls>
-        <source src="https://docs.google.com/uc?export=download&id=1p8BHSIWMMtPMTYEq8W1bRthpXH4mVQfe" type="audio/mp3">
+        <source src="beats/romantic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      <a class="buy-btn" href="https://wa.me/917874705170?text=Hi!%20I%20want%20to%20buy%20the%20Trap%20Beat" target="_blank">Buy Now</a>
+      <button class="buy-btn" onclick="buyNow('Romantic Beat')">Buy Now</button>
     </div>
-
-    <div class="beat-card">
-      <h2>Sitar Drill Beat - ₹149</h2>
+    <div class="beat-card" data-type="drill">
+      <span class="genre">Drill</span>
+      <p>Sitar Drill Beat - Rs.149</p>
       <audio controls>
-        <source src="https://docs.google.com/uc?export=download&id=1ph6ZSALhnryd6OfOwJpw0ANOM3w1FoiV" type="audio/mp3">
+        <source src="beats/drill.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      <a class="buy-btn" href="https://wa.me/917874705170?text=Hi!%20I%20want%20to%20buy%20the%20Sitar%20Drill%20Beat" target="_blank">Buy Now</a>
+      <button class="buy-btn" onclick="buyNow('Sitar Drill Beat')">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="about">
+    <p>Main ek <strong>self-made artist</strong> hoon — rapper bhi hoon aur beat producer bhi. Har beat mein tabahi bhar deta hoon — chahe wo trap ho, romantic ho ya drill.</p>
+    <p>DM karo beats ke liye ya collab ke liye!</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/terabhai.tabahi_ast" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@terabhaitabahiast" target="_blank">YouTube</a>
+      <a href="https://wa.me/917874705170" target="_blank">WhatsApp</a>
     </div>
   </div>
 
   <footer>
-    <p>Contact: +91 7874705170</p>
-    <div class="social">
-      <a href="https://www.instagram.com/terabhai.tabahi_ast" target="_blank">Instagram</a> |
-      <a href="https://youtube.com/@terabhaitabahiast" target="_blank">YouTube</a>
-    </div>
-    <p>About: I'm a self-made artist, rapper & beat producer.</p>
+    &copy; 2025 Tabahi Beats | Designed with dard by Prashant
   </footer>
+
+  <script>
+    function filterBeats(type) {
+      const beats = document.querySelectorAll('.beat-card');
+      beats.forEach((beat) => {
+        beat.style.display = (type === 'all' || beat.dataset.type === type) ? 'block' : 'none';
+      });
+    }
+
+    function buyNow(beatName) {
+      alert(`Contact on WhatsApp to buy: ${beatName}`);
+      window.open('https://wa.me/917874705170', '_blank');
+    }
+  </script>
 </body>
 </html>
