@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tabahi Beats</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
     body {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: #e0e0e0;
+      background: linear-gradient(to right, #f0f2f0, #000c40);
+      color: #222;
       padding: 20px;
     }
     h1 {
       text-align: center;
       font-size: 3em;
-      color: #f9f9f9;
+      color: #1a1a1a;
       margin-bottom: 20px;
     }
     .filters {
@@ -33,7 +33,7 @@
       padding: 10px 20px;
       background-color: #0f3460;
       border: none;
-      color: #f9f9f9;
+      color: #fff;
       cursor: pointer;
       border-radius: 5px;
       transition: all 0.3s ease;
@@ -48,11 +48,11 @@
       gap: 20px;
     }
     .beat-card {
-      background: #1e1e2f;
+      background: #ffffffcc;
       border-radius: 12px;
       padding: 20px;
       width: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s;
     }
     .beat-card:hover {
@@ -88,19 +88,45 @@
       margin-top: 50px;
       text-align: center;
       font-size: 0.9em;
+      color: #eee;
     }
     .about {
       margin-top: 40px;
       text-align: center;
-      font-size: 1em;
-      max-width: 600px;
+      font-size: 1.1em;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      color: #111;
     }
     .social-links a {
       color: #e94560;
       margin: 0 10px;
       text-decoration: none;
+    }
+    .testimonials, .features {
+      max-width: 900px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+    .features li {
+      background-color: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .testimonial-card {
+      background-color: #ffffffcc;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      color: #222;
     }
   </style>
 </head>
@@ -143,17 +169,37 @@
   </div>
 
   <div class="about">
-    <p>Main ek <strong>self-made artist</strong> hoon — rapper bhi hoon aur beat producer bhi. Har beat mein tabahi bhar deta hoon — chahe wo trap ho, romantic ho ya drill.</p>
-    <p>DM karo beats ke liye ya collab ke liye!</p>
+    <p>I’m a <strong>self-made artist</strong>, passionate about creating powerful sounds. I'm a <strong>rapper and a beat producer</strong> blending raw emotion with fire beats.</p>
+    <p>Looking to collaborate or buy exclusive beats? <strong>DM me now</strong> on my socials!</p>
     <div class="social-links">
       <a href="https://www.instagram.com/terabhai.tabahi_ast" target="_blank">Instagram</a>
       <a href="https://youtube.com/@terabhaitabahiast" target="_blank">YouTube</a>
-      <a href="https://wa.me/917874705170" target="_blank">WhatsApp</a>
+      <a href="https://wa.me/9178747057170" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2>Why Choose Tabahi Beats?</h2>
+    <ul>
+      <li>Professional quality beats in multiple styles</li>
+      <li>Only ₹149 per beat – accessible for all artists</li>
+      <li>Fast, smooth, and responsive layout</li>
+      <li>Connect directly via WhatsApp or Instagram</li>
+    </ul>
+  </div>
+
+  <div class="testimonials">
+    <h2>What Artists Say</h2>
+    <div class="testimonial-card">
+      <p><strong>artist:</strong> "Tabahi Beats hits different! Straight 🔥 from a real rapper and producer!"</p>
+    </div>
+    <div class="testimonial-card">
+      <p><strong>BeatDropper:</strong> "Best price, best vibe, and 100% original sound. Respect!"</p>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Tabahi Beats | Designed with dard by Prashant
+    &copy; 2025 Tabahi Beats | Designed with me
   </footer>
 
   <script>
@@ -166,7 +212,7 @@
 
     function buyNow(beatName) {
       alert(`Contact on WhatsApp to buy: ${beatName}`);
-      window.open('https://wa.me/917874705170', '_blank');
+      window.open('https://wa.me/9178747057170', '_blank');
     }
   </script>
 </body>
